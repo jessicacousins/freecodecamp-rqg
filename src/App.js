@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 function App() {
   const [quote, setQuote] = useState("");
@@ -17,33 +19,41 @@ function App() {
   };
 
   useEffect(() => {
-    // Fetch initial quote on component mount
     getNewQuote();
   }, []);
 
   return (
-    <div className="container">
-      <div className="quote-box" id="quote-box">
-        <div className="text" id="text">
-          <p>{quote}</p>
-        </div>
-        <div className="author" id="author">
-          <p>- {author}</p>
-        </div>
-        <button id="new-quote" onClick={getNewQuote}>
-          New Quote
-        </button>
-        <a
-          id="tweet-quote"
-          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-            `"${quote}" - ${author}`
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Tweet Quote
-        </a>
-      </div>
+    <div className="card-container">
+      <Card className="card">
+        <Card.Body className="card-body" id="quote-box">
+          <Card.Title className="card-title">Random Quote Generator</Card.Title>
+          <Card.Text className="card-text" id="card-text">
+            {quote && (
+              <>
+                <h6 className="text" id="text">
+                  {quote}
+                </h6>
+                <h4 className="author" id="author">
+                  - {author}
+                </h4>
+              </>
+            )}
+          </Card.Text>
+          <Button class="btn" id="custom-button" onClick={getNewQuote}>
+            New Quote
+          </Button>
+          <Card.Link
+            id="tweet-quote"
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+              `"${quote}" - ${author}`
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tweet Quote
+          </Card.Link>
+        </Card.Body>
+      </Card>
     </div>
   );
 }

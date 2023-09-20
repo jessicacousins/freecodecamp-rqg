@@ -1,23 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.container {
+html,
+body {
+  background-color: #000 !important;
+}
+
+.card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
 }
 
-.quote-box {
+.card {
+  width: 18rem;
+  color: rgb(18, 232, 107);
+  border-radius: 20px !important;
+  margin: 0 auto;
   text-align: center;
 }
 
-.text {
-  font-size: 18px; /* Adjust the font size as needed */
-  font-weight: bold; /* Adjust the font weight as needed */
-  text-align: center;
-  margin-bottom: 20px; /* Adjust the margin as needed */
+.card .card-title {
+  font-family: "Roboto Mono", monospace;
+  color: rgb(18, 232, 107);
+}
+
+.card-body {
+  background-color: #222;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(246, 245, 245, 0.5);
+}
+
+.card-text {
+  color: #fff;
+}
+
+#custom-button {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: rgb(18, 232, 107);
+  color: #000;
+  font-weight: 600;
+  border: rgb(18, 232, 107);
+}
+
+#custom-button:hover {
+  background-color: rgb(234, 180, 41);
+}
+
+#tweet-quote {
+  color: rgb(255, 0, 179);
+}
+
+#tweet-quote:hover {
+  color: rgb(234, 180, 41);
 }
