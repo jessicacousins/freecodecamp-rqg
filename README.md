@@ -4,6 +4,12 @@
 
 This project is a Random Quote Generator web application built using React and Bootstrap. It fetches random quotes from the Quotable API and displays them to the user. Users can also tweet the displayed quote on Twitter.
 
+## Deployed at Netlify
+
+```
+https://main--helpful-choux-5b8e46.netlify.app/
+```
+
 ## Random Quote API Used
 
 ```
